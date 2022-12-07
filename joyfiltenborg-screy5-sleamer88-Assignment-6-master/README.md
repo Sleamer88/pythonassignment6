@@ -1,13 +1,13 @@
 # XB_0082 - Assignment 6 (2022-2023)
 
 -----
-* **Group Number**: /replace by your group number on canvas/
-* **Contributor 1**: /replace by your full name/
-* **VUnet ID number 1**: /replace by your VUnet ID number/
-* **Contributor 2**: /replace by your full name/
-* **VUnet ID number 2**: /replace by your VUnet ID number/
+* **Group Number**: 'Assignment group 9'
+* **Contributor 1**: 'Roberto Stoica'
+* **VUnet ID number 1**: '2755966'
+* **Contributor 2**: 'Joy Filtenborg'
+* **VUnet ID number 2**: '2769771'
   
-**Date**: /replace by date of first modification/
+**Date**: '1/12/22'
 
 -----
 
@@ -59,11 +59,11 @@ Note that all passing unit tests does not mean that your assignment is perfect. 
 To start with the assignment, fill in the information related to the contributors' name, ID, and date, displayed at the beginning of this document:
 
 ```python
-* Contributor 1: ...
-* VUnet ID number 1: ...
-* Contributor 2: ...
-* VUnet ID number 2: ...
-* Date: ...
+* Contributor 1: 'Roberto Stoica'
+* VUnet ID number 1: '2755966'
+* Contributor 2: 'Joy Filtenborg'
+* VUnet ID number 2: '2769771'
+* Date: '1/12/22'
 ```
 
 To complete the program you will need to complete five tasks.
