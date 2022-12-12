@@ -46,7 +46,7 @@ class Book:
         self.title: str = title
         self.author: str = author
         self.rating: float = rating
-        self.reviews: int= reviews
+        self.reviews: int = reviews
         self.price: float = price
         self.years: List[int] = years
         self.genre: str = genre
@@ -66,6 +66,7 @@ class Book:
         :param n_reviews: initialized as the integer = 0.
         :return: This method returns nothing.
         """
+
         if rating <= self.rating and n_reviews <= self.reviews:
             self.recommended: bool = True
         else:
@@ -84,12 +85,16 @@ class Amazon:
         self.bestsellers: List[Book] = bestsellers
 
     def read_books_csv(self, path: str) -> None:
+
+        self.path: str = "data/books.csv"
+
         """
-        This method seperates the fiction and non fiction books in the bestsellers list.
+        This method separates the fiction and non fiction books in the bestsellers list.
         :param path: This takes the path of the file
         :return: This method returns nothing
         """
         data: Dict = {}
+
         with open(path, 'r', encoding='utf-8-sig') as file:
             data_csv = csv.reader(file)
             next(data_csv)
@@ -123,8 +128,8 @@ class Amazon:
 
     def best_year_rating(self) -> int:
         """
-
-        :return:
+        This method checks for the best rating.
+        :return: This functions returns the most recent year with the best (highest) rating.
         """
         years_ratings: Dict = {}
         for year in range(2009, 2020):
@@ -148,8 +153,8 @@ class Amazon:
 
     def best_year_reviews(self) -> int:
         """
-
-        :return:
+        This method checks for the best review.
+        :return: This function returns the most recent year with the highest number of reviews.
         """
         years_reviews: Dict = {}
         for year in range(2009, 2020):
@@ -174,10 +179,10 @@ class Amazon:
 
     def recommend_book(self, rating: float, n_reviews: int) -> None:
         """
-
-        :param rating:
-        :param n_reviews:
-        :return:
+        This method iterates over the bestsellers and calls on the recommend() method to update the values.
+        :param rating: this is the float number from the previous recommend() method.
+        :param n_reviews: this is the integer from the previous recommend() method.
+        :return: This method returns nothing.
         """
         for book in self.bestsellers:
             book.recommend(rating, n_reviews)
@@ -195,50 +200,50 @@ class Amazon:
 
 class FictionBook(Book):
     """
-
+    This class represents the info for the fiction books.
     """
 
     def __init__(self, title: str, author: str, rating: float, reviews: int, price: float, years: List[int]) -> None:
         """
-
-        :param title:
-        :param author:
-        :param rating:
-        :param reviews:
-        :param price:
-        :param years:
+        This method initializes the needed variables
+        :param title: this is the name of the book as a string.
+        :param author: this is the writer of the book as a string.
+        :param rating: this is the rating out of 5 for the book to determine how much people liked it as a float.
+        :param reviews: this is the number of total reviews a given book has as an integer.
+        :param price: this is the amount that each book costs to buy as a float.
+        :param years: this is a List of integers where if a given book has multiple years, this is where all the years are as integers.
+        :return: This method returns nothing
         """
         super().__init__(title, author, rating, reviews, price, years, Book.FICTION)
 
     def __str__(self) -> str:
         """
-
-        :return:
+        This method just returns the info using the methods within the Book() class
+        :return: This method returns a string with the book title, genre, and the year.
         """
-        # Use .join method for the next line
         return f"{self.title}: {self.genre} ({self.years[0]})"
 
 class NonFictionBook(Book):
     """
-
+    This class represents the info for the non fiction books.
     """
 
     def __init__(self, title: str, author: str, rating: float, reviews: int, price: float, years: List[int]) -> None:
         """
-
-        :param title:
-        :param author:
-        :param rating:
-        :param reviews:
-        :param price:
-        :param years:
+        This method initializes the needed variables
+        :param title: this is the name of the book as a string.
+        :param author: this is the writer of the book as a string.
+        :param rating: this is the rating out of 5 for the book to determine how much people liked it as a float.
+        :param reviews: this is the number of total reviews a given book has as an integer.
+        :param price: this is the amount that each book costs to buy as a float.
+        :param years: this is a List of integers where if a given book has multiple years, this is where all the years are as integers.
+        :return: This method returns nothing
         """
         super().__init__(title, author, rating, reviews, price, years, Book.NON_FICTION)
 
     def __str__(self) -> str:
         """
-
-        :return:
+        This method just returns the info using the methods within the Book() class
+        :return: This method returns a string with the book title, genre, and the year.
         """
-        # Use .join method for the next line
         return f"{self.title}: {self.genre} ({self.years[0]})"
